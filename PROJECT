@@ -1,0 +1,13 @@
+domain: grafana.io
+repo: github.com/ibrokethecloud/grafana-controller
+resources:
+- group: k8s
+  kind: Dashboard
+  version: v1alpha1
+- group: k8s
+  kind: Folder
+  version: v1alpha1
+- group: k8s
+  kind: Datasource
+  version: v1alpha1
+version: "2"
