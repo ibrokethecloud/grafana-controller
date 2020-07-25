@@ -27,11 +27,8 @@ type DatasourceSpec struct {
 
 // DatasourceStatus defines the observed state of Datasource
 type DatasourceStatus struct {
-	ID      uint
-	Message string
-	Slug    string
-	UID     string
-	URL     string
+	ID      uint   `json:"id"`
+	Message string `json:"message"`
 }
 
 // +kubebuilder:object:root=true

@@ -28,11 +28,11 @@ type DashboardSpec struct {
 
 // DashboardStatus defines the observed state of Dashboard
 type DashboardStatus struct {
-	ID      uint
-	Message string
-	Slug    string
-	UID     string
-	URL     string
+	ID      uint   `json:"id"`
+	Message string `json:"message"`
+	Slug    string `json:"slug"`
+	UID     string `json:"uid"`
+	URL     string `json:"url"`
 }
 
 // +kubebuilder:object:root=true

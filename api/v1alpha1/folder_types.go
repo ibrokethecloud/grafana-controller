@@ -27,9 +27,9 @@ type FolderSpec struct {
 
 // FolderStatus defines the observed state of Folder
 type FolderStatus struct {
-	ID      int
-	UID     string
-	Message string
+	ID      int    `json:"id"`
+	UID     string `json:"uid"`
+	Message string `json:"message"`
 }
 
 // +kubebuilder:object:root=true

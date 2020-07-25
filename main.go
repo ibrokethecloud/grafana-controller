@@ -51,7 +51,7 @@ func main() {
 	var metricsAddr string
 	var enableLeaderElection bool
 	flag.StringVar(&metricsAddr, "metrics-addr", ":8080", "The address the metric endpoint binds to.")
-	flag.StringVar(&grafanaEndpoint, "grafana-endpoint", "http://locahost:8080",
+	flag.StringVar(&grafanaEndpoint, "grafana-endpoint", "http://localhost:8080",
 		"The address of the remote Grafana api endpoint to interact with")
 	flag.StringVar(&grafanaToken, "grafana-token", "admin:password",
 		"The credentials to access the Grafana api endpoint")
