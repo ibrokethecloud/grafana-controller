@@ -6,6 +6,7 @@ require (
 	github.com/go-logr/logr v0.1.0
 	github.com/grafana-tools/sdk v0.0.0-20200713194907-007f486b53df
 	github.com/json-iterator/go v1.1.10
+	github.com/namsral/flag v1.7.4-pre
 	github.com/onsi/ginkgo v1.12.1
 	github.com/onsi/gomega v1.10.1
 	gonum.org/v1/netlib v0.0.0-20190331212654-76723241ea4e // indirect

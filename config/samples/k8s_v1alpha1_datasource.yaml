@@ -1,7 +1,0 @@
-apiVersion: k8s.grafana.io/v1alpha1
-kind: Datasource
-metadata:
-  name: datasource-sample
-spec:
-  # Add fields here
-  foo: bar

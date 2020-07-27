@@ -1,0 +1,27 @@
+apiVersion: k8s.grafana.io/v1alpha1
+kind: Datasource
+metadata:
+  name: test
+spec:
+  content: '{
+  "orgId": 1,
+  "name": "prometheus-crd",
+  "type": "prometheus",
+  "typeLogoUrl": "",
+  "access": "proxy",
+  "url": "http://access-prometheus",
+  "password": "",
+  "user": "",
+  "database": "",
+  "basicAuth": false,
+  "basicAuthUser": "",
+  "basicAuthPassword": "",
+  "withCredentials": false,
+  "isDefault": true,
+  "jsonData": {
+    "httpMethod": "GET",
+    "keepCookies": []
+  },
+  "secureJsonFields": {},
+  "readOnly": false
+}'

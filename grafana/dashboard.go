@@ -10,6 +10,7 @@ import (
 func (a APIClient) SetDashboard(dSpec v1alpha1.DashboardSpec) (dStatus v1alpha1.DashboardStatus,
 	err error) {
 	folderid := 0
+	var found bool
 	board := sdk.Board{}
 	err = json.Unmarshal([]byte(dSpec.Content), &board)
 	if err != nil {
@@ -17,9 +18,16 @@ func (a APIClient) SetDashboard(dSpec v1alpha1.DashboardSpec) (dStatus v1alpha1.
 		return dStatus, err
 	}
 	if len(dSpec.Folder) != 0 {
-		// If we find no folder we will default to the main folder //
-		folderid, _, _, _ = a.GetFolderByName(dSpec.Folder)
+		// If we find no folder error and retry. Should help orchestrate folder
+		// creation and dashboard deployment to the folder.
+		folderid, _, found, err = a.GetFolderByName(dSpec.Folder)
 	}
+
+	if !found {
+		dStatus.Message = "Folder not found"
+		return dStatus, err
+	}
+
 	params := sdk.SetDashboardParams{
 		FolderID:  folderid,
 		Overwrite: true,

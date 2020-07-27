@@ -1,0 +1,76 @@
+
+---
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.2.5
+  creationTimestamp: null
+  name: dashboards.k8s.grafana.io
+spec:
+  group: k8s.grafana.io
+  names:
+    kind: Dashboard
+    listKind: DashboardList
+    plural: dashboards
+    singular: dashboard
+  scope: Namespaced
+  validation:
+    openAPIV3Schema:
+      description: Dashboard is the Schema for the dashboards API
+      properties:
+        apiVersion:
+          description: 'APIVersion defines the versioned schema of this representation
+            of an object. Servers should convert recognized schemas to the latest
+            internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+          type: string
+        kind:
+          description: 'Kind is a string value representing the REST resource this
+            object represents. Servers may infer this from the endpoint the client
+            submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+          type: string
+        metadata:
+          type: object
+        spec:
+          description: DashboardSpec defines the desired state of Dashboard
+          properties:
+            content:
+              type: string
+            folder:
+              type: string
+          required:
+          - content
+          - folder
+          type: object
+        status:
+          description: DashboardStatus defines the observed state of Dashboard
+          properties:
+            id:
+              type: integer
+            message:
+              type: string
+            slug:
+              type: string
+            uid:
+              type: string
+            url:
+              type: string
+          required:
+          - id
+          - message
+          - slug
+          - uid
+          - url
+          type: object
+      type: object
+  version: v1alpha1
+  versions:
+  - name: v1alpha1
+    served: true
+    storage: true
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []

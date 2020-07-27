@@ -17,8 +17,9 @@ limitations under the License.
 package main
 
 import (
-	"flag"
 	"os"
+
+	"flag"
 
 	"github.com/ibrokethecloud/grafana-controller/grafana"
 

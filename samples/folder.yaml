@@ -1,0 +1,13 @@
+apiVersion: k8s.grafana.io/v1alpha1
+kind: Folder
+metadata:
+  name: test
+spec:
+  content: '{
+  "uid": "nErXDvCkzz",
+  "title": "test",
+  "hasAcl": false,
+  "canSave": true,
+  "canEdit": true,
+  "canAdmin": true
+}'
